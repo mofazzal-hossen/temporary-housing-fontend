@@ -56,30 +56,29 @@ const locations = [
 const trustedOwners = [
   {
     id: 1,
-    name: 'Abdur Rahman',
+    name: 'devil',
     role: 'Premium Owner',
     rating: 4.9,
     reviews: 124,
-    image: 'https://randomuser.me/api/portraits/men/32.jpg',
+    image: 'https://randomuser.me/api/portraits/men/75.jpg',
   },
   {
     id: 2,
-    name: 'Farhana Islam',
+    name: 'Nusrat Jahan',
     role: 'Verified Owner',
     rating: 4.8,
     reviews: 98,
-    image: 'https://randomuser.me/api/portraits/women/44.jpg',
+    image: 'https://randomuser.me/api/portraits/women/65.jpg',
   },
   {
     id: 3,
-    name: 'Kamrul Hasan',
+    name: 'Tanvir Ahmed',
     role: 'Premium Owner',
     rating: 5.0,
     reviews: 156,
-    image: 'https://randomuser.me/api/portraits/men/86.jpg',
+    image: 'https://randomuser.me/api/portraits/men/45.jpg',
   },
 ];
-
 export default function ExtraSections() {
   const [dynamicReviews, setDynamicReviews] = useState([]);
 
@@ -236,7 +235,7 @@ export default function ExtraSections() {
                   <Star className="w-4 h-4 text-yellow-400 fill-current" />
                   <span className="font-bold text-[#1C1C1E]">{owner.rating}</span>
                 </div>
-                <div className="w-1 h-1 rounded-full bg-gray-300"></div>
+                <div className="w-1 h-1 rounded-full bg-blue-100"></div>
                 <div className="text-sm text-[#6B7280]">
                   <span className="font-bold text-[#1C1C1E]">{owner.reviews}</span> Reviews
                 </div>
