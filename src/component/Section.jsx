@@ -29,27 +29,27 @@ const stats = [
 const locations = [
   {
     id: 1,
-    name: 'Dhaka',
-    properties: '1,240 Properties',
-    image: '/locations/dhaka.png',
+    name: "New York",
+    properties: "1,240+ Stays",
+    image: "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 2,
-    name: 'Chittagong',
-    properties: '850 Properties',
-    image: '/locations/chittagong.png',
+    name: "Los Angeles",
+    properties: "850+ Stays",
+    image: "https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 3,
-    name: 'Sylhet',
-    properties: '420 Properties',
-    image: '/locations/sylhet.png',
+    name: "Chicago",
+    properties: "420+ Stays",
+    image: "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 4,
-    name: "Cox's Bazar",
-    properties: '310 Properties',
-    image: '/locations/coxs_bazar.png',
+    name: "Miami",
+    properties: "310+ Stays",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop",
   },
 ];
 
