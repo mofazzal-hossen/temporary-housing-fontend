@@ -47,10 +47,10 @@ const Navbar = () => {
     userRole === "Owner"
       ? "/dashboard/owner"
       : userRole === "Admin"
-      ? "/dashboard/admin"
-      : session
-      ? "/dashboard/tenant"
-      : "/dashboard";
+        ? "/dashboard/admin"
+        : session
+          ? "/dashboard/tenant"
+          : "/dashboard";
 
   const propertiesHref = userRole === "Owner" ? "/dashboard/owner/properties" : "/dashboard/tenant/my-bookings";
   const propertiesLabel = userRole === "Owner" ? "My Properties" : "My Bookings";
@@ -58,7 +58,7 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", href: "/", icon: "🏠" },
     { name: "Properties", href: "/properties", icon: "🏢" },
-    { name: "Services", href: "/services", icon: "⚡" },
+
     { name: "Blog", href: "/blog", icon: "📖" },
     { name: "Dashboard", href: dashboardHref, icon: "📊" },
   ];
@@ -82,11 +82,10 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-xl shadow-[0_2px_20px_rgba(0,0,0,0.08)] border-b border-[#F3F4F6]"
-            : "bg-white/90 backdrop-blur-md border-b border-[#F9FAFB]"
-        }`}
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled
+          ? "bg-white/95 backdrop-blur-xl shadow-[0_2px_20px_rgba(0,0,0,0.08)] border-b border-[#F3F4F6]"
+          : "bg-white/90 backdrop-blur-md border-b border-[#F9FAFB]"
+          }`}
       >
         <div className="max-w-[1440px] mx-auto px-5 sm:px-8">
           <div className="flex items-center justify-between h-[68px]">
@@ -105,14 +104,13 @@ const Navbar = () => {
               </button>
 
               <Link href="/" className="flex items-center gap-2.5 group">
-                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#009282] to-[#00b8a4] flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all duration-200">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <polyline points="9 22 9 12 15 12 15 22" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
+                <img
+                  src="/logo.png"
+                  alt="Temporary-Housinglogo"
+                  className="w-12 h-12 rounded-xl object-cover"
+                />
                 <span className="font-bold text-[1.35rem] text-[#1C1C1E] tracking-tight leading-none">
-                  Rent<span className="text-[#009282]">Desh</span>
+                  Temporary-<span className="text-[#009282]">Housing</span>
                 </span>
               </Link>
             </div>
@@ -123,11 +121,10 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-xl text-[14px] font-semibold transition-all duration-200 group ${
-                    isActive(item.href)
-                      ? "text-[#009282] bg-[#F0FBF9]"
-                      : "text-[#6B7280] hover:text-[#1C1C1E] hover:bg-[#F9FAFB]"
-                  }`}
+                  className={`relative px-4 py-2 rounded-xl text-[14px] font-semibold transition-all duration-200 group ${isActive(item.href)
+                    ? "text-[#009282] bg-[#F0FBF9]"
+                    : "text-[#6B7280] hover:text-[#1C1C1E] hover:bg-[#F9FAFB]"
+                    }`}
                 >
                   {item.name}
                   {isActive(item.href) && (
@@ -163,7 +160,7 @@ const Navbar = () => {
                       width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
                       className={`transition-transform duration-200 ${isProfileOpen ? "rotate-180" : ""}`}
                     >
-                      <polyline points="6 9 12 15 18 9"/>
+                      <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </button>
 
@@ -192,18 +189,26 @@ const Navbar = () => {
                       {/* Menu Items */}
                       <div className="p-2">
                         {[
-                          { href: dashboardHref, label: "Dashboard", icon: (
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-                          )},
-                          { href: "/dashboard/profile", label: "My Profile", icon: (
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                          )},
-                          { href: propertiesHref, label: propertiesLabel, icon: (
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                          )},
-                          { href: "/settings", label: "Settings", icon: (
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-                          )},
+                          {
+                            href: dashboardHref, label: "Dashboard", icon: (
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+                            )
+                          },
+                          {
+                            href: "/dashboard/profile", label: "My Profile", icon: (
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                            )
+                          },
+                          {
+                            href: propertiesHref, label: propertiesLabel, icon: (
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+                            )
+                          },
+                          {
+                            href: "/settings", label: "Settings", icon: (
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" /></svg>
+                            )
+                          },
                         ].map((item) => (
                           <Link
                             key={item.href}
@@ -224,7 +229,7 @@ const Navbar = () => {
                           className="w-full flex items-center gap-3 px-3 py-2.5 text-[14px] font-semibold text-red-500 hover:text-red-600 hover:bg-red-50 rounded-xl transition-all"
                         >
                           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>
+                            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" /><polyline points="16 17 21 12 16 7" /><line x1="21" y1="12" x2="9" y2="12" />
                           </svg>
                           Sign Out
                         </button>
@@ -255,9 +260,8 @@ const Navbar = () => {
 
         {/* ── Mobile Menu ── */}
         <div
-          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
-            isMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
-          }`}
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
+            }`}
           ref={mobileMenuRef}
         >
           <div className="border-t border-[#F3F4F6] bg-white px-5 py-4 flex flex-col gap-1">
@@ -266,11 +270,10 @@ const Navbar = () => {
                 key={item.name}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-[15px] font-semibold transition-all ${
-                  isActive(item.href)
-                    ? "text-[#009282] bg-[#F0FBF9]"
-                    : "text-[#374151] hover:bg-[#F9FAFB]"
-                }`}
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-[15px] font-semibold transition-all ${isActive(item.href)
+                  ? "text-[#009282] bg-[#F0FBF9]"
+                  : "text-[#374151] hover:bg-[#F9FAFB]"
+                  }`}
               >
                 <span>{item.icon}</span>
                 {item.name}
@@ -279,7 +282,7 @@ const Navbar = () => {
 
 
             {/* Mobile Auth */}
-            <div className="mt-3 pt-3 border-t border-[#F3F4F6]">  
+            <div className="mt-3 pt-3 border-t border-[#F3F4F6]">
               {session ? (
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-3 px-4 py-3 bg-[#F9FAFB] rounded-xl border border-[#E5E7EB]">
@@ -328,7 +331,7 @@ const Navbar = () => {
                   </Link>
                 </div>
 
-)}
+              )}
             </div>
           </div>
         </div>

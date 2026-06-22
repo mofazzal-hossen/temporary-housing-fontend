@@ -99,27 +99,30 @@ export default function ExtraSections() {
 
   return (
     <div className="w-full flex flex-col gap-24 py-16">
-      
+
       {/* 1. Rental Statistics Section */}
-      <motion.section 
+      <motion.section
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         className="relative w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mt-12"
       >
-        <div className="bg-[#0B1A18] rounded-[32px] overflow-hidden shadow-2xl relative">
+        <div className="bg-slate-950
+ rounded-[32px] overflow-hidden shadow-2xl relative">
           {/* Subtle glowing orb backgrounds */}
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#009282] opacity-20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#009282] opacity-15 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
-          
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-slate-950
+ opacity-20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-slate-950
+ opacity-15 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+
           <div className="relative z-10 py-20 px-8 sm:px-16">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 mb-5 bg-white/10 text-[#A7F3EB] text-[11px] font-bold uppercase tracking-widest rounded-full backdrop-blur-md border border-white/10">Why Choose RentDesh</span>
               <h2 className="text-4xl md:text-5xl font-black text-white mb-5 tracking-tight">Trust by the Numbers</h2>
               <p className="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">Connecting thousands of verified tenants with trusted property owners across Bangladesh. Your reliable partner in modern living.</p>
             </div>
-            
+
             <motion.div variants={staggerContainer} className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center">
               {stats.map((stat) => {
                 const Icon = stat.icon;
@@ -139,7 +142,7 @@ export default function ExtraSections() {
       </motion.section>
 
       {/* 2. Top Locations Section */}
-      <motion.section 
+      <motion.section
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
@@ -150,7 +153,7 @@ export default function ExtraSections() {
           <div>
             <span className="inline-block text-[#009282] font-bold uppercase tracking-widest text-xs mb-3">Popular Destinations</span>
             <h2 className="text-3xl md:text-4xl font-black text-[#1C1C1E] mb-3 tracking-tight">Explore Top Locations</h2>
-            <p className="text-[#6B7280] text-[15px] max-w-2xl leading-relaxed">Find your perfect home in Bangladesh's most vibrant cities. Handpicked neighborhoods curated just for you.</p>
+            <p className="text-[#6B7280] text-[15px] max-w-2xl leading-relaxed">Enjoy hassle-free short-term rentals with secure listings and smooth living experiences tailored for your situation.</p>
           </div>
           <button className="flex items-center gap-2 text-[#009282] font-bold hover:text-[#007A6C] transition-colors group whitespace-nowrap bg-emerald-50 px-6 py-3 rounded-xl hover:bg-emerald-100">
             View All Locations
@@ -161,16 +164,16 @@ export default function ExtraSections() {
         <motion.div variants={staggerContainer} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {locations.map((location) => (
             <motion.div variants={fadeIn}
-              key={location.id} 
+              key={location.id}
               className="group relative h-[420px] rounded-[24px] overflow-hidden cursor-pointer shadow-sm hover:shadow-2xl transition-all duration-500"
             >
-              <img 
-                src={location.image} 
-                alt={location.name} 
+              <img
+                src={location.image}
+                alt={location.name}
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-[1500ms] ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A18]/90 via-[#0A1A18]/20 to-transparent"></div>
-              
+
               <div className="absolute top-6 left-6">
                 <div className="bg-white/20 backdrop-blur-md border border-white/30 text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-sm">
                   {location.properties}
@@ -179,7 +182,7 @@ export default function ExtraSections() {
 
               <div className="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:-translate-y-1 transition-transform duration-500">{location.name}</h3>
-                
+
                 <div className="opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100 flex items-center gap-2 text-[#A7F3EB] font-bold text-sm">
                   Explore City <ArrowRight className="w-4 h-4" />
                 </div>
@@ -190,7 +193,7 @@ export default function ExtraSections() {
       </motion.section>
 
       {/* 3. Trusted Owners Section */}
-      <motion.section 
+      <motion.section
         variants={fadeIn}
         initial="hidden"
         whileInView="visible"
@@ -198,22 +201,22 @@ export default function ExtraSections() {
         className="w-full max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 mt-10"
       >
         <div className="text-center mb-16">
-          <span className="inline-block text-[#009282] font-bold uppercase tracking-widest text-xs mb-3">Community First</span>
-          <h2 className="text-3xl md:text-4xl font-black text-[#1C1C1E] mb-4 tracking-tight">Meet Our Trusted Owners</h2>
+          <span className="inline-block text-[#009282] font-bold uppercase tracking-widest text-xs mb-3">Temporary Living First</span>
+          <h2 className="text-3xl md:text-4xl font-black text-[#1C1C1E] mb-4 tracking-tight">Trusted Owners You Can Rely On</h2>
           <p className="text-[#6B7280] text-[15px] max-w-2xl mx-auto leading-relaxed">Rent with absolute confidence. Our top-rated property owners provide exceptional service and seamless living experiences.</p>
         </div>
 
         <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {trustedOwners.map((owner) => (
             <motion.div variants={fadeIn}
-              key={owner.id} 
+              key={owner.id}
               className="bg-white rounded-[32px] p-8 border border-gray-100 hover:border-[#009282]/20 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 text-center group"
             >
               <div className="relative mb-6">
                 <div className="w-28 h-28 mx-auto rounded-full p-1.5 bg-gradient-to-b from-[#009282]/20 to-transparent group-hover:from-[#009282]/40 transition-colors duration-500">
-                  <img 
-                    src={owner.image} 
-                    alt={owner.name} 
+                  <img
+                    src={owner.image}
+                    alt={owner.name}
                     className="w-full h-full rounded-full object-cover border-2 border-white shadow-sm"
                   />
                 </div>
@@ -223,14 +226,14 @@ export default function ExtraSections() {
                   </div>
                 </div>
               </div>
-              
+
               <h3 className="text-xl font-black text-[#1C1C1E] mb-2">{owner.name}</h3>
               <div className="flex justify-center items-center gap-1.5 mb-6">
                 <Award className="w-4 h-4 text-[#009282]" />
                 <span className="text-xs font-bold text-[#009282] uppercase tracking-widest">{owner.role}</span>
               </div>
-              
-              <div className="flex items-center justify-center gap-4 bg-gray-50/80 py-3.5 px-6 rounded-2xl mx-auto border border-gray-100 w-max">
+
+              <div className="flex items-center justify-center gap-4 cd  py-3.5 px-6 rounded-2xl mx-auto border border-gray-100 w-max">
                 <div className="flex items-center gap-1.5">
                   <Star className="w-4 h-4 text-yellow-400 fill-current" />
                   <span className="font-bold text-[#1C1C1E]">{owner.rating}</span>
@@ -247,7 +250,7 @@ export default function ExtraSections() {
 
       {/* 4. Customer Reviews Section (Dynamic) */}
       {dynamicReviews.length > 0 && (
-        <motion.section 
+        <motion.section
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
@@ -263,7 +266,7 @@ export default function ExtraSections() {
           <motion.div variants={staggerContainer} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {dynamicReviews.map((review) => (
               <motion.div variants={fadeIn}
-                key={review._id} 
+                key={review._id}
                 className="bg-white rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-[0_2px_15px_rgb(0,0,0,0.02)] hover:shadow-[0_15px_40px_rgb(0,0,0,0.06)] transition-all duration-300 relative flex flex-col h-full group"
               >
                 {/* Minimalist Quote Mark */}
@@ -275,9 +278,9 @@ export default function ExtraSections() {
 
                 <div className="flex items-center gap-1 mb-8 relative z-10">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`w-4 h-4 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-200'}`} 
+                    <Star
+                      key={i}
+                      className={`w-4 h-4 ${i < review.rating ? 'text-yellow-400 fill-current' : 'text-gray-200'}`}
                     />
                   ))}
                 </div>
