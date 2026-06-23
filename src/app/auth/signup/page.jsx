@@ -78,7 +78,7 @@ const SignUpPage = () => {
     setGoogleLoading(true);
     setError("");
     try {
-      const { data, error } = await authClient.signIn.social({ 
+      const { data, error } = await authClient.signIn.social({
         provider: "google",
         callbackURL: "/dashboard"
       });
@@ -101,9 +101,11 @@ const SignUpPage = () => {
       <div className="hidden lg:block w-[45%] relative overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=2070&auto=format&fit=crop')" }}
+          style={{
+            backgroundImage: "url('/singup.jpg')",
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1A237E]/90 via-[#283593]/75 to-[#3949AB]/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1A237E]/90  " />
         <div className="absolute top-[-80px] left-[-80px] w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         <div className="absolute bottom-[-60px] right-[-60px] w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl" />
 
@@ -111,26 +113,26 @@ const SignUpPage = () => {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm border border-white/20 flex items-center justify-center">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <polyline points="9 22 9 12 15 12 15 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <polyline points="9 22 9 12 15 12 15 22" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             <span className="text-white font-bold text-2xl tracking-tight">
-              Rent<span className="text-white/70">Desh</span>
+              Temporary-<span className="text-white/70">Housing</span>
             </span>
           </div>
 
           <div>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-              ✨ Join 50,000+ happy users today
+              ✨ Welcome to Temporary Housing
             </div>
             <h2 className="text-4xl xl:text-5xl font-bold text-white leading-tight mb-4">
-              Start your<br />
-              journey to a<br />
+              Find your<br />
+              perfect temporary<br />
               <span className="text-[#9FA8DA]">better home.</span>
             </h2>
             <p className="text-white/70 text-lg leading-relaxed max-w-sm">
-              Create a free account and browse thousands of verified rental listings across Bangladesh.
+              Create a free account and discover trusted short-term housing for work, travel, relocation, and extended stays.
             </p>
 
             {/* Feature list */}
@@ -141,7 +143,7 @@ const SignUpPage = () => {
                 "✓  Zero brokerage fees",
                 "✓  Listings in 64 districts",
               ].map((feat) => (
-                <div key={feat} className="flex items-center gap-2 text-white/80 text-sm font-medium">
+                <div key={feat} className="flex items-center gap-2 text-white/80 text-sm font-bold">
                   {feat}
                 </div>
               ))}
@@ -153,15 +155,15 @@ const SignUpPage = () => {
             <div className="flex items-center gap-3 mb-3">
               <img src="https://i.pravatar.cc/40?img=12" alt="User" className="w-10 h-10 rounded-full border-2 border-white/30 object-cover" />
               <div>
-                <p className="text-white font-semibold text-sm">Nadia Islam</p>
-                <p className="text-white/50 text-xs">Property Owner, Chittagong</p>
+                <p className="text-white font-semibold text-sm">Devil</p>
+                <p className="text-white/50 text-xs">Property Owner, bandarban</p>
               </div>
               <div className="ml-auto flex gap-0.5">
-                {[1,2,3,4,5].map(s => <span key={s} className="text-yellow-400 text-sm">★</span>)}
+                {[1, 2, 3, 4, 5].map(s => <span key={s} className="text-yellow-400 text-sm">★</span>)}
               </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed">
-              "I listed my property on RentDesh and found a tenant within a week. The platform is so easy to use!"
+              "Temporary Housing made my relocation stress-free. I found a comfortable place to stay within days, and the entire process was smooth and reliable."
             </p>
           </div>
         </div>
@@ -186,11 +188,11 @@ const SignUpPage = () => {
               <span className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></span>
               Free to join
             </div>
-            <h1 className="font-bold text-[2rem] text-[#1C1C1E] leading-tight mb-2">
-              Create your <span className="text-[#009282]">RentDesh</span><br />account
+            <h1 className="font-bold text-2xl text-[#1C1C1E] leading-tight mb-2">
+              Create your <span className="text-[#009282]">Temporary-Housing</span><br />account
             </h1>
             <p className="text-[#6B7280] text-[14px] leading-relaxed">
-              Fill in the details below to get started.
+              Create your free account and unlock access to trusted temporary housing for work, travel, and relocation.
             </p>
           </div>
 
@@ -198,7 +200,7 @@ const SignUpPage = () => {
           {error && (
             <div className="mb-5 p-3.5 rounded-xl bg-red-50 border border-red-100 text-red-600 text-sm font-medium flex items-center gap-2.5">
               <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" />
               </svg>
               {error}
             </div>
@@ -206,7 +208,7 @@ const SignUpPage = () => {
           {success && (
             <div className="mb-5 p-3.5 rounded-xl bg-emerald-50 border border-emerald-100 text-emerald-700 text-sm font-medium flex items-center gap-2.5">
               <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
               </svg>
               {success}
             </div>
@@ -221,7 +223,7 @@ const SignUpPage = () => {
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
                   </svg>
                 </span>
                 <input
@@ -240,7 +242,7 @@ const SignUpPage = () => {
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" />
                   </svg>
                 </span>
                 <input
@@ -260,7 +262,7 @@ const SignUpPage = () => {
               <div className="relative">
                 <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]">
                   <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/>
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" />
                   </svg>
                 </span>
                 <input
@@ -278,11 +280,11 @@ const SignUpPage = () => {
                 >
                   {isVisible ? (
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>
+                      <path d="M17.94 17.94A10.07 10.07 0 0112 20c-7 0-11-8-11-8a18.45 18.45 0 015.06-5.94M9.9 4.24A9.12 9.12 0 0112 4c7 0 11 8 11 8a18.5 18.5 0 01-2.16 3.19m-6.72-1.07a3 3 0 11-4.24-4.24" /><line x1="1" y1="1" x2="23" y2="23" />
                     </svg>
                   ) : (
                     <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" />
                     </svg>
                   )}
                 </button>
@@ -297,7 +299,7 @@ const SignUpPage = () => {
                 <div className="relative">
                   <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#9CA3AF]">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" />
                     </svg>
                   </span>
                   <input
@@ -325,7 +327,7 @@ const SignUpPage = () => {
                   </select>
                   <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[#9CA3AF]">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="6 9 12 15 18 9"/>
+                      <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </span>
                 </div>
@@ -341,8 +343,8 @@ const SignUpPage = () => {
               {loading ? (
                 <>
                   <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24" fill="none">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
                   </svg>
                   Creating Account...
                 </>
@@ -368,16 +370,16 @@ const SignUpPage = () => {
           >
             {googleLoading ? (
               <svg className="animate-spin w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="none">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
               </svg>
             ) : (
               <>
                 <svg viewBox="0 0 48 48" className="w-5 h-5 shrink-0">
-                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
-                  <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
-                  <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
-                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+                  <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z" />
+                  <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z" />
+                  <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0124 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z" />
+                  <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 01-4.087 5.571l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z" />
                 </svg>
                 Continue with Google
               </>

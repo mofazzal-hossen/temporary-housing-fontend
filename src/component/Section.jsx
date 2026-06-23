@@ -20,35 +20,35 @@ const staggerContainer = {
 };
 
 const stats = [
-  { id: 1, name: 'Active Properties', value: '2,500+', icon: Building2 },
-  { id: 2, name: 'Happy Tenants', value: '10,000+', icon: Users },
-  { id: 3, name: 'Cities Covered', value: '15+', icon: MapPin },
-  { id: 4, name: 'Trusted Owners', value: '500+', icon: ShieldCheck },
+  { id: 1, name: 'Active Properties', value: '6,500+', icon: Building2 },
+  { id: 2, name: 'Happy Tenants', value: '100,000+', icon: Users },
+  { id: 3, name: 'Cities Covered', value: '500+', icon: MapPin },
+  { id: 4, name: 'Trusted Owners', value: '1900+', icon: ShieldCheck },
 ];
 
 const locations = [
   {
     id: 1,
     name: "New York",
-    properties: "1,240+ Stays",
+    properties: "1,900+ Stays",
     image: "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 2,
     name: "Los Angeles",
-    properties: "850+ Stays",
+    properties: "1,250+ Stays",
     image: "https://images.unsplash.com/photo-1534190760961-74e8c1c5c3da?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 3,
     name: "Chicago",
-    properties: "420+ Stays",
+    properties: "4,520+ Stays",
     image: "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?q=80&w=800&auto=format&fit=crop",
   },
   {
     id: 4,
     name: "Miami",
-    properties: "310+ Stays",
+    properties: "9,910+ Stays",
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800&auto=format&fit=crop",
   },
 ];
